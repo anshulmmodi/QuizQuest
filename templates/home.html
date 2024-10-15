@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "../static/home.css">
+    <title>Home</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="black-bar">
+        <div class="header-content">
+            <div class="welcome-text">
+                <img src="../static/quiz-quest.jpeg">
+                <h1>Welcome, {{ user_name }}</h1>
+            </div>
+            <button class="logout-button" onclick="window.location.href = '{{ url_for('signin') }}';">Logout <ion-icon name="log-out-outline" class="logout-icon"></ion-icon></button>
+        </div>
+    </div>
+    <div class = "ag-format-container" >
+        <div class = "ag-courses_box">
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='General Knowledge') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title" style="margin-left: 70px;">
+                        General Knowledge
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='Geography') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Geography
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='Science') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Science
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='History') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        History
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='Sports') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Sports
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+            <div class = "ag-courses_item">
+                <a href="{{ url_for('process_topic', topic='Technology') }}" class ="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        Technology
+                    </div>
+                    <div class = "ag-courses-item_date-box">
+
+                        <span class = "ag-courses-item_date"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

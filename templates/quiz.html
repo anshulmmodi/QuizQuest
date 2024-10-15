@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Quiz App</title>
+
+</head>
+
+<body>
+    <div class="start-screen">
+        <button id="start-button">Start</button>
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <div class="instructions-set">
+                <p><b>Start: </b>Hit the Start Button to start quiz.</p>
+                <p><b>Questions: </b>The quiz consists of minimum 10 questions. 1 point for each correct answer.</p>
+                <p><b>Guessing: </b>No negative marking.So a wild guess could earn you a point.</p>
+                <p><b>Navigation: </b>Press the Next Button for the next question.</p>
+                <p><b>Timer: </b>Each question has a timer of 10 seconds.</p>
+                <p><b>Hints: </b>Hints are available for maximum 2 questions. So use hints wisely.</p>
+            </div>
+            <h2>Rules</h2>
+            <div class="rules-set">
+                <p><b>No Outside Help: </b>To keep things fair, no external search engines or books. </p>
+                <p><b>Honesty Policy: </b>Play fair and let your knowledge shine!</p>
+            </div>
+        </div>
+    </div>
+    <div class="hint-alert-container " id="hint-alert-container">
+        <div class="hint-alert-box" id="hint-alert-box">
+            <h2 class="hint-alert-title">Alert!</h2>
+            <p class="hint-alert-description" id="hint-alert-description">All Hints Used</p>
+            <div class="hint-alert-close-box">
+                <button class="btn hint-alert-close">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="display-container">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div class="header">
+            <div class="number-of-count">
+                <span class="number-of-question"></span>
+            </div>
+            <div class="hints-left"><span id="hints-left"></span></div>
+            <div class="timer-div" id="timer-div">
+                <img src="../static/stopwatch-xxl.png" width="20px" />
+                <span class="time-left">10s</span>
+            </div>
+        </div>
+        <div id="container">
+            <!-- questions and options will be displayed here -->
+            <div id="explanation"></div>
+        </div>
+
+        <!-- Existing structure -->
+        <div id="quiz-container">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+        <button id="hintBtn" onclick="showHint()">Hint <img src="../static/hint-bulb.png" class="no-select" id="hint-img">
+        </button>
+        <p id="hint-message"></p>
+
+        <button id="next-button" class="no-select">Next</button>
+    </div>
+    <div class="score-container hide">
+        <h2 id="quiz-result">Quiz Result</h2>
+        <div class="percentage-container">
+            <div class="circular-progress">
+                <span class="progress-value">
+                    0%
+                </span>
+            </div>
+        </div>
+        <div id="user-score">Demo Score</div>
+        <div id="score-buttons">
+            <a href="{{ url_for('view_certificate') }}" target="_blank" id="view-certificate" class="scale-on-hover">View Certificate</a>
+            <button id="restart">Restart</button>
+            <a href="{{ url_for('home') }}" id="back-to-home" class="scale-on-hover">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Define a JavaScript variable and assign JSON data from Flask
+        var quizData = {{ quiz_data | tojson }};
+    </script>
+
+    <!-- Include your script.js file -->
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

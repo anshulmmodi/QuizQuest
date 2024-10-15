@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            position: relative; /* Added */
+        }
+
+        .logout-button {
+            position: absolute; /* Added */
+            top: 20px; /* Adjust top distance */
+            right: 20px; /* Adjust right distance */
+            background-color: red; /* Adjust background color */
+            color: #fff; /* Adjust text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background-color: darkred; /* Adjust hover background color */
+        }
+
+        .logout-icon {
+            vertical-align: middle;
+            margin-left: 5px; /* Adjust icon spacing */
+            font-size: 20px; /* Adjust icon size */
+        }
+
+        #questionForm {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #optionsField {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="logout-button" onclick="window.location.href = '{{ url_for('signin') }}';">Logout <ion-icon name="log-out-outline" class="logout-icon"></ion-icon></button>
+    <h1>Create a Question</h1>
+
+    <form id="questionForm" action="/submit_question" method="post">
+        <label for="questionText">Question Text:</label><br>
+        <textarea id="questionText" name="questionText" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="questionType">Type of Question:</label><br>
+        <input type="radio" id="trueFalse" name="questionType" value="True/False" required>
+        <label for="trueFalse">True/False</label><br>
+        <input type="radio" id="mcq" name="questionType" value="MCQ" required>
+        <label for="mcq">Multiple Choice</label><br><br>
+
+        <div id="optionsField">
+            <label for="option1">Option 1:</label><br>
+            <input type="text" id="option1" name="option1"><br>
+            <label for="option2">Option 2:</label><br>
+            <input type="text" id="option2" name="option2"><br>
+            <label for="option3">Option 3:</label><br>
+            <input type="text" id="option3" name="option3"><br>
+            <label for="option4">Option 4:</label><br>
+            <input type="text" id="option4" name="option4"><br><br>
+        </div>
+
+        <div id="correctAnswerFieldTrueFalse" style="display: none;">
+            <label for="correctAnswerTrueFalse">Correct Answer:</label><br>
+            <select id="correctAnswerTrueFalse" name="correctAnswerTrueFalse">
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select><br><br>
+        </div>
+
+        <div id="correctAnswerFieldMCQ" style="display: none;">
+            <label for="correctAnswerMCQ">Correct Answer:</label><br>
+            <input type="text" id="correctAnswerMCQ" name="correctAnswer"><br><br>
+        </div>
+
+        <label for="hintText">Hint Text:</label><br>
+        <input type="text" id="hintText" name="hintText"><br><br>
+
+        <label for="explanationText">Explanation Text:</label><br>
+        <input type="text" id="explanationText" name="explanationText"><br><br>
+
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option value="General Knowledge">General Knowledge</option>
+            <option value="Geography">Geography</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+            <option value="Sports">Sports</option>
+            <option value="Technology">Technology</option>
+        </select><br><br>
+
+        <label for="difficulty">Difficulty:</label><br>
+        <select id="difficulty" name="difficulty">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('trueFalse').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('optionsField').style.display = 'none';
+                document.getElementById('correctAnswerFieldMCQ').style.display = 'none';
+                document.getElementById('correctAnswerFieldTrueFalse').style.display = 'block';
+            } else {
+                document.getElementById('optionsField').style.display = 'block';
+                document.getElementById('correctAnswerFieldTrueFalse').style.display = 'none';
+            }
+        });
+
+        document.getElementById('mcq').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('optionsField').style.display = 'block';
+                document.getElementById('correctAnswerFieldTrueFalse').style.display = 'none';
+                document.getElementById('correctAnswerFieldMCQ').style.display = 'block';
+            } else {
+                document.getElementById('optionsField').style.display = 'none';
+                document.getElementById('correctAnswerFieldMCQ').style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

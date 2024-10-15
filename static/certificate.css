@@ -1,0 +1,157 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background: linear-gradient(184deg, #000428, #004e92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.certificate-container{
+    border: 5px solid #007BFF;
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.certificate {
+    font-size: 48px;
+    font-weight: bold;
+    color: #007BFF;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 15px;
+}
+
+.of-completion,
+.score-line,
+.date,
+p {
+    font-size: 22px;
+    color: #333;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#user-name {
+    font-family: Monotype Corsiva, Times, Serif;
+    font-size: 50px;
+    font-style: italic;
+    color: #E85A4F;
+    margin: 20px 0;
+}
+
+.score-line {
+    display: flex;
+    /* This makes the container a flex container */
+    align-items: center;
+    /* This aligns the items vertically in the center */
+    justify-content: center;
+    /* This aligns the items to the start of the container */
+}
+
+.score-line strong,
+.score-line p {
+    margin: 0;
+    /* Removes default margins from p and strong tags */
+    display: inline-block;
+    /* Ensures that the elements are treated as inline blocks */
+}
+
+.signature {
+    margin-top: 20px;
+    /* Adjusted for overall signature block spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.signature-line {
+    display: inline-block;
+    border-bottom: 2px solid #000;
+    width: 200px;
+    margin: 4px 0;
+    /* Reduced space around the line */
+}
+
+.sign {
+    height: auto;
+    /* Change to auto if you want the font size to determine the height */
+    font-family: 'Rock Salt', cursive;
+    margin: 0;
+    /* Remove margin to bring closer to the line */
+    font-size: 24px;
+    /* Adjust font size as needed */
+    line-height: 1.2;
+    /* Adjust line height to control spacing */
+}
+
+/* Additional adjustment to reduce space */
+p {
+    margin: 5px 0;
+    /* Adjust paragraph margin for tighter spacing */
+}
+
+
+.date {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+}
+
+#logo {
+    font-family: 'Titan One', sans-serif;
+    color: #FF6600;
+    font-size: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container{
+    text-align: center;
+}
+.button{
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    display: inline-flex;
+    height: 40px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: #0884fc;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button:hover{
+    background: #1079f1;
+}
+
+.button:hover{
+    background: #086ae3;
+}
+
+.button_text,
+.button_icon{
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+    height: 100%;
+}
+
+.button_icon{
+    font-size: 1.5em;
+    background-color: rgba(0,0,0,0.08);
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="../static/category.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="back-button-container">
+        <button onclick="window.location.href = '{{ url_for('home') }}';" >
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        </button>
+    </div>
+    <a href="{{ url_for('process_quiz', topic=topic, difficulty='Easy') }}"><span>Easy</span><i></i></a>
+        <a href="{{ url_for('process_quiz', topic=topic, difficulty='Medium') }}"><span>Medium</span><i></i></a>
+        <a href="{{ url_for('process_quiz', topic=topic, difficulty='Hard') }}"><span>Hard</span><i></i></a>
+
+</body>
+
+</html>

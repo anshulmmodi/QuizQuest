@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href = "../static/signIn.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" >
+
+
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="/signup" method="POST">
+                <h1>Create Account</h1><br><br>
+                <!-- <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span> -->
+                <div class="account-input">
+                    <i class="far fa-user"></i>
+                    <input type="text" placeholder="Name" name = "name"/>
+                </div>
+                <div class="account-input">
+                    <i class="far fa-envelope"></i>
+                    <input type="text" placeholder="Email" name = "email"/>
+                </div>
+                <div class="account-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password"/>
+                </div>
+                <button class="mt-3">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            {% if error_message %}
+                <p class="error">{{ error_message }}</p>
+            {% endif %}
+            <form action="/signin" id="sign-in-container" method="POST">
+                <div class="hide" id="forgot">
+                    <div class="enter-email">
+                        <div class="enter-email-detail">
+                            <h1>Do you forgot ?</h1>
+                            <p>Just enter your email to retrieve your password</p>
+                            <div class="account-input ">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" placeholder="Email" />
+                            </div>
+                            <div class="">
+                                <button class="signIn-form-button">Send</button>
+                            <p id="slideup" style="cursor: pointer"><u>close</u></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <h1>Sign in</h1><br><br>
+                <!-- <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span> -->
+                <div class="account-input ">
+                    <i class="far fa-envelope"></i>
+                    <input type="text" placeholder="Email" name="email"/>
+                </div>
+                <div class="account-input">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password"/>
+                </div>
+                <p class="forgot" id="slidedown" > Forgot your password? </p>
+                <button class="signIn-form-button">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="square"></div>
+                <div class="triangle"></div>
+                <div class="circle"></div>
+                <div class="square2"></div>
+                <div class="triangle2"></div>
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../static/signIn.js"></script>
+</body>
+</html>
