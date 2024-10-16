@@ -2,57 +2,60 @@
 
 ## Overview
 
-**QuizQuest** is a dynamic quiz application where users can sign up, log in via OTP (displayed in the console), and take quizzes across various topics and difficulty levels. The app features a timed quiz, optional hints, progress tracking, and explanations for incorrect answers. Upon completion, users can view and download a certificate. Admins can manage the quiz question bank by adding new questions.
+**QuizQuest** is a web-based quiz application built using Flask (Python) for the backend and HTML, CSS, and JavaScript for the frontend. The project does not rely on an SQL database; data can be stored directly in files or using in-memory structures like Python dictionaries. Users can sign up, log in via OTP (shown in the console), and take quizzes across various topics and difficulty levels. The quiz features timed questions, optional hints, explanations for incorrect answers, and a downloadable certificate upon completion.
 
 ## Features
 
 1. **User Authentication**:
-   - Users can sign up with basic details.
-   - OTP-based sign-in (OTP is displayed in the console for demo purposes).
-
+   - Users can sign up and log in using an OTP (OTP is displayed in the console for demo purposes).
+  
 2. **Quiz Topics**:
-   - Users can choose from 6 topics: 
+   - Six quiz topics available:
+     - General Knowledge
      - Geography
      - Science
      - History
      - Sports
      - Technology
-     - General Knowledge
-
+     
+  
 3. **Difficulty Levels**:
-   - After selecting a topic, users choose a difficulty level: Easy, Medium, or Hard.
-
-4. **Instructions and Start**:
-   - An instruction page provides quiz guidelines before starting.
-   - The quiz starts after the user confirms.
-
+   - Each topic has three difficulty levels: Easy, Medium, or Hard.
+  
+4. **Instructions and Quiz Start**:
+   - An instruction page is provided before the quiz begins.
+   - Users can start the quiz after reviewing the instructions.
+  
 5. **Timed Questions**:
-   - Each question has a 10-second timer.
-   - A progress bar shows quiz advancement as users answer questions.
+   - Each question is timed with a 10-second timer.
+   - A progress bar tracks the user's progress through the quiz.
 
 6. **Hints**:
-   - Users have a limited number of hints to use during the quiz.
+   - Users can use a limited number of hints during the quiz.
 
 7. **Explanations**:
-   - On selecting the wrong answer, an explanation for the correct answer is displayed.
+   - After answering incorrectly, an explanation for the correct answer is displayed.
 
 8. **Results and Certification**:
-   - After completing the quiz, the result is shown.
-   - Users can view and download a certificate, which includes:
+   - After completing the quiz, the result is displayed.
+   - Users can view and download a personalized certificate containing:
      - Username
      - Topic and difficulty level
-     - Score and total questions
-     - Date
+     - Score and total number of questions
+     - Date of completion
 
-9. **Admin Panel**:
-   - Admins can add questions to the quiz bank for all topics and difficulty levels.
+9. **Admin Features**:
+   - Admins can add new questions to the quiz bank by providing the topic, difficulty level, question, options, correct answer, and explanation.
+
+## Technologies Used
+
+- **Backend**: Flask (Python)
+- **Frontend**: HTML, CSS, JavaScript
 
 ## System Requirements
 
-- **Java 8 or higher**
-- **MySQL 5.7 or higher** (for storing user and quiz data)
-- **JDBC Driver for MySQL**
-- **Maven** (optional, for managing dependencies)
+- **Python 3.7+**
+- **Flask** (install via `pip install flask`)
 
 ## Setup Instructions
 
