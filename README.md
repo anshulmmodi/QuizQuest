@@ -55,7 +55,7 @@
 ## System Requirements
 
 - **Python 3.7+**
-- **Flask** (install via `pip install flask`)
+- **Flask**
 
 ## Setup Instructions
 
